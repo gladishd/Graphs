@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import Sidebar from './Sidebar'
-import Navbar from './Navbar'
+import Navbar from './navbar'
 import MessagesList from './MessagesList'
 
 export default class Main extends Component {
