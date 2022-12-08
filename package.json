@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Stackathon Project for Fullstack Academy",
   "engines": {
-    "node": "~12.11.1"
+    "node": "^14.13.1 || >=16.0.0"
   },
   "main": "index.js",
   "scripts": {
