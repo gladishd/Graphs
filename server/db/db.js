@@ -10,7 +10,7 @@ const db = new Sequelize(
     logging: false
   }
 )
-console.log("Does db.js load?", pkg.name, db)
+console.log("Does db.js load?", pkg.name)
 module.exports = db
 
 // This is a global Mocha hook used for resource cleanup.
