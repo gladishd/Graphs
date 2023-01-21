@@ -56,11 +56,18 @@ const messages = [
 ];
 
 async function seed() {
+
+  // await db.sequelize.drop()
+  // await db.sequelize.sync({ force: true })
+  console.log("What are the authors? ", authors)
   await db.sync({ force: true })
+  console.log("did the db sync?")
   console.log(chalk.magentaBright('db synced!'))
 
-  Promise.all(authors.map(author =>
-    Author.create(author))
+  Promise.all(authors.map(author => {
+    console.log("What is the author being created? ", author)
+    Author.create(author)
+  })
   )
     .then(() =>
       Promise.all(channels.map(channel =>
@@ -208,11 +215,14 @@ async function seed() {
 async function runSeed() {
   console.log(chalk.red('seeding...'))
   try {
+    console.log("did we reach the try loop?")
     await seed()
   } catch (err) {
+    console.log("did we catch an error?")
     console.error(err)
     process.exitCode = 1
   } finally {
+    console.log("did we make it to the finally block?")
     console.log(chalk.magenta('closing db connection'))
     await db.close()
     console.log(chalk.blue('db connection closed'))
